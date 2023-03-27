@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
         textview2 = findViewById(R.id.textView2);
-        //10
+        //100
         editText = findViewById(R.id.editText);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
