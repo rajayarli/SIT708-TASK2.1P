@@ -30,10 +30,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = editText.getText().toString();
-                double faranheit = Integer.parseInt(s);
-                double celcius = (faranheit - 32) / 1.8;
-                textview2.setText("It is =" + celcius +"celcius");
-                Toast.makeText(MainActivity.this, "It is = " + celcius +" celcius", Toast.LENGTH_SHORT).show();
+                int b=1;
+                double faranheit = 0;
+                double celcius=0;
+                try {
+
+                    faranheit = Integer.parseInt(s);
+                    celcius = (faranheit - 32) / 1.8;
+
+                } catch (NumberFormatException e) {
+                    b=0;
+                    System.err.println(faranheit + " is not a number.");
+                }
+              if(b==1){
+                    textview2.setText("It is =" + celcius +"celcius");
+                    Toast.makeText(MainActivity.this, "It is = " + celcius +" celcius", Toast.LENGTH_SHORT).show();
+                }
+              else{
+                  System.out.println("enter proper input to convert");
+              }
+
             }
         });
     }
